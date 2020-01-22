@@ -24,6 +24,11 @@ class ProjectTest(TestCase):
         self.assertEqual(proj.production, 'my_project.herokuapp.com')
 
     
+    def test_str(self):
+        proj = Project.objects.get(title='MyProject')
+        self.assertEqual(str(proj), "<Project: title='MyProject', description='It does...', language='Python', image='sample.png', github='github.com/me/my_project', production='my_project.herokuapp.com'>")
+
+    
     def test_it_can_have_many_technologies(self):
         proj = Project.objects.get(title='MyProject')
         t1 = Technology.objects.create(name='Django')

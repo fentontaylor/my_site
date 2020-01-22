@@ -12,6 +12,7 @@ class ProjectTest(TestCase):
             production = 'my_project.herokuapp.com',
         )
 
+
     def test_attributes(self):
         proj = Project.objects.get(title='MyProject')
 

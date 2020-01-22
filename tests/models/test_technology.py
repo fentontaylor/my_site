@@ -15,6 +15,11 @@ class TechnologyTest(TestCase):
         self.assertEqual(pg.name, 'PostgreSQL')
 
 
+    def test_str(self):
+        tech = Technology.objects.get(name='Flask')
+        self.assertEqual(str(tech), '<Technology: name=\'Flask\'>')
+
+
     def test_can_belong_to_many_projects(self):
         tech = Technology.objects.get(name='PostgreSQL')
         p1 = Project.objects.create(title='Rails Project', description='Its Rails', language='Ruby')

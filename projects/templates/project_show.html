@@ -17,6 +17,13 @@
       <li>{{ tech.name }}</li>
     {% endfor %}
     </ul>
+    <h5>Links:</h5>
+    <ul>
+      <li><a href="{{ project.github }}">GitHub Repo</a></li>
+      {% if project.production %}
+      <li><a href="{{ project.production }}">Production App</a></li>
+      {% endif %}
+    </ul>
   </div>
 </div>
 {% endblock %}

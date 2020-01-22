@@ -10,5 +10,9 @@ def project_index(request):
 
 def project_show(request, pk):
     project = Project.objects.get(pk=pk)
-    context = { 'project': project }
+    tech_list = list(project.technologies.all())
+    context = {
+        'project': project,
+        'tech_list': tech_list
+    }
     return render(request, 'project_show.html', context)

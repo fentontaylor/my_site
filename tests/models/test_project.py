@@ -7,7 +7,6 @@ class ProjectTest(TestCase):
             title = 'MyProject',
             description = 'It does cool things',
             language = 'Python',
-            # technologies = models.ManyToManyField('Technology', related_name='projects', blank=True, default='')
             image = 'sample.png',
             github = 'github.com/me/my_project',
             production = 'my_project.herokuapp.com',
@@ -22,3 +21,12 @@ class ProjectTest(TestCase):
         self.assertEqual(proj.image, 'sample.png')
         self.assertEqual(proj.github, 'github.com/me/my_project')
         self.assertEqual(proj.production, 'my_project.herokuapp.com')
+
+    
+    def test_it_can_have_many_technologies(self):
+        proj = Project.objects.get(title='MyProject')
+        t1 = Technology.objects.create(name='Django')
+        t2 = Technology.objects.create(name='PostgreSQL')
+        proj.technologies.add(t1, t2)
+        tech_list = list(proj.technologies.all())
+        self.assertListEqual(tech_list, [t1, t2])

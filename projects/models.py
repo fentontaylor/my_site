@@ -4,8 +4,11 @@ from django.db import models
 class Technology(models.Model):
     name = models.CharField(max_length=30)
 
-    def __str__(self):
+    def __repr__(self):
         return f"<Technology: name='{self.name}'>"
+
+    def __str__(self):
+        return self.name
 
 
 class Project(models.Model):
@@ -17,7 +20,7 @@ class Project(models.Model):
     github = models.URLField(max_length=200, blank=True, null=True)
     production = models.URLField(max_length=200, blank=True, null=True)
 
-    def __str__(self):
+    def __repr__(self):
         desc = f'{self.description[0:7]}...'
         return f"<Project: title='{self.title}', " \
                          f"description='{desc}', " \
@@ -25,3 +28,6 @@ class Project(models.Model):
                          f"image='{self.image}', " \
                          f"github='{self.github}', " \
                          f"production='{self.production}'>"
+
+    def __str__(self):
+        return self.title

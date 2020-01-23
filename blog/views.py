@@ -35,10 +35,11 @@ def blog_show(request, pk):
                 post=post
             )
             comment.save()
-            
+
     comments = Comment.objects.filter(post=post)
     context = {
         'post': post,
-        'comments': comments
+        'comments': comments,
+        'form': form
     }
     return render(request, 'blog_show.html', context)

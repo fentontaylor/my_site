@@ -1,2 +1,11 @@
 @import "links.css";
 @import "buttons.css";
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.no-padding {
+  margin: 0px;
+  padding: 0px;
+}

@@ -7,6 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
   <!-- Project CSS -->
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
@@ -17,9 +20,9 @@
   <title>Fenton's Portfolio</title>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="my-title" href="{% url 'project_index' %}">Fenton Taylor's Portfolio</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container no-padding">
+    <a class="my-brand" href="{% url 'project_index' %}">Fenton Taylor's Portfolio</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,7 +40,7 @@
     </div>
   </div>
 </nav>
-<body class="container">
+<body>
   {% block page_content %}
   {% endblock %}
 </body>

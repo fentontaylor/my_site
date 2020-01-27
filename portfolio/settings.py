@@ -31,8 +31,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'fentontaylor.com',
-    'fentontaylor.herokuapp.com'
+    'fentontaylor.herokuapp.com',
 ]
 
 
@@ -134,8 +135,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    # if your static files folder is named "staticfiles"
     os.path.join(BASE_DIR, 'staticfiles'),
+    # os.path.join(BASE_DIR, 'portfolio/static')
 )
 
 #  Add configuration for static files storage using whitenoise
